@@ -7,6 +7,7 @@ async function WithdrawScript() {
     const contractArtifactName = "Groth16VerifierWithdraw";
     const constructorArguments: any = [];
     const Verifier = await deployContract(contractArtifactName, constructorArguments);
+    // We can easily verify the proof below at address 0xe958c839D5606B28e9e3e427aff406E026Bd12ae on the Arbitrum Sepolia network.
     const tx = await Verifier.verifyProof([
         "19224713303733665931382788273108160646596300539992646668521873511513383586113",
         "2319530688931962928453558482516008821275973511278429437081410335627116555351"
