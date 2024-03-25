@@ -41,6 +41,5 @@ WALLET_PRIVATE_KEY=your_private_key_here...
 - [Twitter](https://twitter.com/zksync)
 - [Discord](https://join.zksync.dev/)
 
-## License
-
-This project is under the [MIT](./LICENSE) license.
+## Reason 
+The current error found in precompile contracts 0x05 (expmod) and 0x08 (ecPairing) are due to zkSync not yet supporting these two precompile contracts. Contract 0x05 can be easily wrapped with Solidity code, but contract 0x08 is more complex
