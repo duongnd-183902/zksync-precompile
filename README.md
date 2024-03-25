@@ -9,17 +9,15 @@ This project was scaffolded with [zksync-cli](https://github.com/matter-labs/zks
 
 - `/contracts`: Contains solidity smart contracts.
 - `/deploy`: Scripts for contract deployment and interaction.
-- `/test`: Test files.
+- `/script`: Scripts for contract deployment and interaction.
 - `hardhat.config.ts`: Configuration settings.
 
 ## How to Use
-
-- `npm run compile`: Compiles contracts.
-- `npm run deploy`: Deploys using script `/deploy/deploy.ts`.
-- `npm run interact`: Interacts with the deployed contract using `/deploy/interact.ts`.
-- `npm run test`: Tests the contracts.
-
-Note: Both `npm run deploy` and `npm run interact` are set in the `package.json`. You can also run your files directly, for example: `npx hardhat deploy-zksync --script deploy.ts`
+- `cp .env.example .env`: Config rich wallet
+- `yarn compile`: Compiles contracts.
+- `npx hardhat node-zksync`: run inmemory zksync node.
+- `npx ts-node scripts/DKG.s.ts`: Deploying and call `addPKCommittee` function that emit error on precompile contract 0x05.
+- `npx ts-node scripts/Withdraw.s.ts`: Deploying and call `verify proof` function that return fail cause precompile contract 0x08.
 
 ### Environment Settings
 
@@ -34,12 +32,6 @@ WALLET_PRIVATE_KEY=your_private_key_here...
 ### Network Support
 
 `hardhat.config.ts` comes with a list of networks to deploy and test contracts. Add more by adjusting the `networks` section in the `hardhat.config.ts`. To make a network the default, set the `defaultNetwork` to its name. You can also override the default using the `--network` option, like: `hardhat test --network dockerizedNode`.
-
-### Local Tests
-
-Running `npm run test` by default runs the [zkSync In-memory Node](https://era.zksync.io/docs/tools/testing/era-test-node.html) provided by the [@matterlabs/hardhat-zksync-node](https://era.zksync.io/docs/tools/hardhat/hardhat-zksync-node.html) tool.
-
-Important: zkSync In-memory Node currently supports only the L2 node. If contracts also need L1, use another testing environment like Dockerized Node. Refer to [test documentation](https://era.zksync.io/docs/tools/testing/) for details.
 
 ## Useful Links
 
