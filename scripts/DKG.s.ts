@@ -1,0 +1,15 @@
+import { deployContract } from "../deploy/utils";
+
+// An example of a basic deploy script
+// It will deploy a Greeter contract to selected network
+// as well as verify it on Block Explorer if possible for the network
+async function DKGScript() {
+    const contractArtifactName = "DKG";
+    const constructorArguments: any = [];
+    const DKG = await deployContract(contractArtifactName, constructorArguments);
+    const tx = await DKG.addPKCommittee([[BigInt("5058432194066827516400720857465386811245550609093492721445009807935745185626"),
+    BigInt("20293705807290586238814839741283859333189566941802666050293009806314285999716")], [BigInt("19865053981664923563256229345630113103701908857117906947224681266390358880283"),
+    BigInt("19865053981664923563256229345630113103701908857117906947224681266390358880283")], [BigInt("13151663293300869314450975897589941193446207928470034498121816645761269738909"),
+    BigInt("15884403440550636914046103009338964166545337002355023853052925435472477422176")]]);
+}
+DKGScript();
