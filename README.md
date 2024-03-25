@@ -14,6 +14,7 @@ This project was scaffolded with [zksync-cli](https://github.com/matter-labs/zks
 
 ## How to Use
 - `cp .env.example .env`: Config rich wallet
+- `yarn install`: Install package.
 - `yarn compile`: Compiles contracts.
 - `npx hardhat node-zksync`: run inmemory zksync node.
 - `npx ts-node scripts/DKG.s.ts`: Deploying and call `addPKCommittee` function that emit error on precompile contract 0x05.
